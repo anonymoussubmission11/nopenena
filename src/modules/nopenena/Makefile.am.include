@@ -1,0 +1,7 @@
+include_HEADERS += include/secp256k1_nopenena.h
+noinst_HEADERS += src/modules/nopenena/main_impl.h
+noinst_HEADERS += src/modules/nopenena/tests_impl.h
+noinst_HEADERS += src/modules/nopenena/zero_com_impl.h
+noinst_HEADERS += src/modules/nopenena/zero_com_tests_impl.h
+noinst_HEADERS += src/modules/nopenena/bench_nopenena.h
+
