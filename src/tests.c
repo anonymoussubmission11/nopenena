@@ -5286,17 +5286,30 @@ int main(int argc, char **argv) {
         CHECK(secp256k1_context_randomize(ctx, secp256k1_rand_bits(1) ? run32 : NULL));
     }
 
-    //run_nopenena_tests();
+    run_nopenena_tests();
+    test_ringcip();
+
+    printf("Transaction details for varying accounts including decoys ===================\n");
     bench_nopenena_api_t(0, 2);
     bench_nopenena_api_t(1, 2);
     bench_nopenena_api_t(1, 3);
     bench_nopenena_api_t(1, 4);
 
+    printf("Contract Transaction details for varying accounts including decoys ===================\n");
+    bench_nopenena_contract_t(0, 2);
+    bench_nopenena_contract_t(1, 2);
+    bench_nopenena_contract_t(1, 3);
+    bench_nopenena_contract_t(1, 4);
+
+    printf("Transaction details for varying actual accounts ===================\n");
+    bench_nopenena_api_t(0, 2);
+    bench_nopenena_api_t(1, 3);
+
+    printf("Split Transactions ===================\n");
     bench_nopenena_split_t(0, 2);
     bench_nopenena_split_t(1, 2);
     bench_nopenena_split_t(1, 3);
     bench_nopenena_split_t(1, 4);
-    //test_ringcip();
 
 #ifdef  DO_OTHER_TESTS
 
